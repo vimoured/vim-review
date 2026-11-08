@@ -1,10 +1,10 @@
 # vim-review
 
 The format review comments are kept in, as files, for the plugins that write
-and read them: [fugitive-extras](https://github.com/roumail/fugitive-extras)
+and read them: [fugitive-extras](https://github.com/vimoured/fugitive-extras)
 saves and loads your comments in it, and
 [vim-prompts](https://github.com/roumail/vim-prompts) has the agent write its
-comments in it. It has no commands.
+comments in it. Plugins call it; it has nothing to type.
 
 ```
 src/app.py:12: could you check the None case here?
@@ -31,11 +31,11 @@ newlines.
 ## Install
 
 ```vim
-Plug 'roumail/vim-review'
+Plug 'vimoured/vim-review'
 ```
 
 ## Tests
 
-```sh
-vim -Nu NONE -i NONE -Es -S test/run.vim
-```
+Tested by [vim-suite](https://github.com/vimoured/vim-suite), in
+`test/vim-review.vim`, and through the plugins that save and read comments
+with it. Every pull request runs them.
